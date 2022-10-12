@@ -1,35 +1,27 @@
-package com.projeto2.demo.projeto2maligno;
+package com.projeto2.demo.projeto2maligno.config;
 
 import java.sql.*;
 /**
  *
  * @author mayron
  */
-public class Conexao {
+public class Connection {
     private String local;
     private String user;
     private String senha;
-    private Connection c;
+    private java.sql.Connection c;
     private Statement statment;
     private String str_conexao;
     private String driverjdbc;
 
-    public Conexao(String bd, String local, String porta,
-                   String banco, String user, String senha) {
+    public Connection(String bd, String local, String porta,
+                      String banco, String user, String senha) {
         if (bd.equals("PostgreSql")){
             setStr_conexao("jdbc:postgresql://"+ local +":" + porta +"/"+ banco);
             setLocal(local);
             setSenha(senha);
             setUser(user);
             setDriverjdbc("org.postgresql.Driver");
-        }else {
-            if (bd.equals("MySql")) {
-                setStr_conexao("jdbc:mysql://"+ local +":" + porta +"/"+ banco);
-                setLocal(local);
-                setSenha(senha);
-                setUser(user);
-                setDriverjdbc("com.mysql.jdbc.Driver");
-            }
         }
     }
 
@@ -97,11 +89,11 @@ public class Conexao {
         this.senha = senha;
     }
 
-    public Connection getC() {
+    public java.sql.Connection getC() {
         return c;
     }
 
-    public void setC(Connection c) {
+    public void setC(java.sql.Connection c) {
         this.c = c;
     }
 

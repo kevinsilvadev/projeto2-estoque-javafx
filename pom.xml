@@ -85,6 +85,11 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.5.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -108,7 +113,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.projeto2.demo.projeto2maligno/com.projeto2.demo.projeto2maligno.HelloApplication
+                                com.projeto2.demo.projeto2maligno/com.projeto2.demo.projeto2maligno.StartApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

@@ -8,4 +8,8 @@ module com.projeto2.demo.projeto2maligno {
 
     opens com.projeto2.demo.projeto2maligno to javafx.fxml;
     exports com.projeto2.demo.projeto2maligno;
+    exports com.projeto2.demo.projeto2maligno.config;
+    opens com.projeto2.demo.projeto2maligno.config to javafx.fxml;
+    exports com.projeto2.demo.projeto2maligno.entities;
+    opens com.projeto2.demo.projeto2maligno.entities to javafx.fxml;
 }
