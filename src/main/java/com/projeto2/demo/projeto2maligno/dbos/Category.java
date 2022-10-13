@@ -1,4 +1,4 @@
-package com.projeto2.demo.projeto2maligno.entities;
+package com.projeto2.demo.projeto2maligno.dbos;
 
 import java.util.Objects;
 

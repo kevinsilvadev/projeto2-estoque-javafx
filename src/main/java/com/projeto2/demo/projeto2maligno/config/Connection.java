@@ -1,10 +1,7 @@
 package com.projeto2.demo.projeto2maligno.config;
 
 import java.sql.*;
-/**
- *
- * @author mayron
- */
+
 public class Connection {
     private String local;
     private String user;

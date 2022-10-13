@@ -1,8 +1,8 @@
-package com.projeto2.demo.projeto2maligno.entities;
+package com.projeto2.demo.projeto2maligno.dbos;
 
 import java.util.Objects;
 
-public class Products {
+public class Product {
 
     private int id_produto;
 
@@ -13,10 +13,10 @@ public class Products {
 
     private String description;
 
-    public Products(){
+    public Product(){
     }
 
-    public Products(String name, Integer preco, Integer qtd, String description) {
+    public Product(String name, Integer preco, Integer qtd, String description) {
         this.name = name;
         this.preco = preco;
         this.qtd = qtd;
@@ -70,8 +70,8 @@ public class Products {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Products products = (Products) o;
-        return id_produto == products.id_produto;
+        Product product = (Product) o;
+        return id_produto == product.id_produto;
     }
 
     @Override

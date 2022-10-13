@@ -1,8 +1,7 @@
-package com.projeto2.demo.projeto2maligno;
+package com.projeto2.demo.projeto2maligno.daos;
 
 import com.projeto2.demo.projeto2maligno.config.Connection;
-import com.projeto2.demo.projeto2maligno.entities.Category;
-import com.projeto2.demo.projeto2maligno.entities.Products;
+import com.projeto2.demo.projeto2maligno.dbos.Category;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;

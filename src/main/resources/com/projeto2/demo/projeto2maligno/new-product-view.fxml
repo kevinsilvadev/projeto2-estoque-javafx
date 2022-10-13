@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.NewProdutosController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.NewProdutosController">
    <children>
       <Button fx:id="btnOnAction" layoutX="375.0" layoutY="457.0" mnemonicParsing="false" onAction="#btnCadastrarOnAction" text="CADASTRAR" />
       <TextField fx:id="nome" layoutX="341.0" layoutY="87.0" promptText="Name" />
