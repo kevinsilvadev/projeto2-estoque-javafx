@@ -10,10 +10,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class StartApplication extends Application {
-
-    private static Scene telaTableView;
     private static Scene telaCadastrarProdutos;
-
     private static Scene telaNewCategory;
     private static Scene telaHome;
     private static Stage stage;
@@ -29,9 +26,6 @@ public class StartApplication extends Application {
         Parent parentCadastrarProdutos = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("new-product-view.fxml")));
         telaCadastrarProdutos = new Scene(parentCadastrarProdutos, 640,400);
 
-        Parent parentTableView = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("table-view.fxml")));
-        telaTableView = new Scene(parentTableView, 640,400);
-
         Parent parentNewCategory = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("new-category-view.fxml")));
         telaNewCategory = new Scene(parentNewCategory, 640,400);
 
@@ -43,9 +37,6 @@ public class StartApplication extends Application {
         switch (src) {
             case "home-view.fxml":
                 stage.setScene(telaHome);
-                break;
-            case "table-view":
-                stage.setScene(telaTableView);
                 break;
             case "new-product-view.fxml":
                 stage.setScene(telaCadastrarProdutos);

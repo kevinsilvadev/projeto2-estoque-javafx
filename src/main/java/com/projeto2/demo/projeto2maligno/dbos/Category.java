@@ -11,7 +11,10 @@ public class Category {
     public Category() {
     }
 
-    public Category(String name) {
+    public Category(String name) throws Exception {
+        if(name == "" || name == null) {
+            throw new Exception("ERRO");
+        }
         this.name = name;
     }
 

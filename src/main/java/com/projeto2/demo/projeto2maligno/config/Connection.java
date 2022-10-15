@@ -32,7 +32,7 @@ public class Connection {
     }
 
     //Conexão com o Banco de Dados
-    public void conect(){
+    public void conect() {
         try {
             Class.forName(getDriverjdbc());
             setC(DriverManager.getConnection(getStr_conexao(), getUser(), getSenha()));
@@ -43,7 +43,7 @@ public class Connection {
         }
     }
 
-    public void disconect(){
+    public void disconect() {
         try {
             getC().close();
         }catch (SQLException ex) {
@@ -56,7 +56,7 @@ public class Connection {
         try {
             return getStatment().executeQuery(query);
         }catch (SQLException ex) {
-            ex.printStackTrace();
+            System.out.println(ex.getMessage());
             return null;
         }
     }
