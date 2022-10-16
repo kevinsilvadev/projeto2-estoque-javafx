@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.TableViewController">
+   <children>
+     <TableView fx:id="table" layoutY="81.0" minWidth="200" prefHeight="320.0" prefWidth="677.0">
+         <columns>
+            <TableColumn fx:id="name" prefWidth="127.0" text="Name" />
+            <TableColumn fx:id="preco" prefWidth="125.0" text="Preço" />
+            <TableColumn fx:id="qtd" prefWidth="139.0" text="Quantidade" />
+            <TableColumn fx:id="description" minWidth="0.0" prefWidth="114.0" text="Descrição" />
+            <TableColumn fx:id="categoria" minWidth="0.0" prefWidth="171.0" text="Categoria" />
+         </columns>
+      </TableView>
+      <TextField layoutX="37.0" layoutY="38.0" promptText="Nome" />
+      <Label layoutX="37.0" layoutY="14.0" prefHeight="17.0" prefWidth="110.0" text="Consultar por nome:" />
+      <Label contentDisplay="CENTER" layoutX="254.0" layoutY="2.0" prefHeight="25.0" prefWidth="169.0" text="VISUALIZAÇÃO DA TABELA" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnConsultar" layoutX="202.0" layoutY="38.0" mnemonicParsing="false" onAction="#btnConsultarOnAction" text="Consultar" />
+      <Button fx:id="btnVoltar" layoutX="604.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnActionBack" prefHeight="25.0" prefWidth="59.0" text="Voltar" />
+      <Button fx:id="btnAtualizar" layoutX="292.0" layoutY="38.0" mnemonicParsing="false" onAction="#btnAtualizarOnAction" text="Atualizar" />
+   </children>
+</AnchorPane>

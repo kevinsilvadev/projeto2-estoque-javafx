@@ -15,6 +15,8 @@ public class StartApplication extends Application {
     private static Scene telaHome;
     private static Stage stage;
 
+    private static Scene telaTableView;
+
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -29,7 +31,10 @@ public class StartApplication extends Application {
         Parent parentNewCategory = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("new-category-view.fxml")));
         telaNewCategory = new Scene(parentNewCategory, 640,400);
 
-        stage.setScene(telaHome);
+         Parent parentTableView = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("table-view.fxml")));
+         telaTableView = new Scene(parentTableView, 640,400);
+
+        stage.setScene(telaTableView);
         stage.show();
     }
 
@@ -43,6 +48,9 @@ public class StartApplication extends Application {
                 break;
             case "new-category-view.fxml":
                 stage.setScene(telaNewCategory);
+                break;
+            case "table-view.fxml":
+                stage.setScene(telaTableView);
                 break;
         }
     }

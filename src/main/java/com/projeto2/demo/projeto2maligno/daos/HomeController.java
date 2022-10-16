@@ -1,10 +1,10 @@
 package com.projeto2.demo.projeto2maligno.daos;
 
 import com.projeto2.demo.projeto2maligno.StartApplication;
+import com.projeto2.demo.projeto2maligno.config.Connection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import org.controlsfx.control.action.Action;
 
 public class HomeController {
 
@@ -12,9 +12,12 @@ public class HomeController {
     private Button btnNewProduct;
 
     @FXML
+    private Button btnConsultar;
+
+    @FXML
     private Button btnNewCategory;
     @FXML
-    public void btnActionNewProduct(ActionEvent actionEvent) {
+    public void btnActionNewProduct(ActionEvent actionEvent) throws Exception {
         StartApplication.changeScreen("new-product-view.fxml");
     }
 
@@ -22,4 +25,10 @@ public class HomeController {
     public void btnActionNewCategory(ActionEvent actionEvent) {
         StartApplication.changeScreen("new-category-view.fxml");
     }
+
+    @FXML
+    public void btnActionConsultar(ActionEvent actionEvent) throws Exception {
+        StartApplication.changeScreen("table-view.fxml");
+    }
+
 }

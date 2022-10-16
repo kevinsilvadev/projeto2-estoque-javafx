@@ -2,45 +2,38 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.NewProdutosController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="1020.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.NewProdutosController">
    <children>
-      <Button fx:id="btnOnAction" layoutX="375.0" layoutY="457.0" mnemonicParsing="false" onAction="#btnCadastrarOnAction" text="CADASTRAR" />
-      <TextField fx:id="nome" layoutX="341.0" layoutY="87.0" promptText="Name" />
-      <TextField fx:id="preco" layoutX="341.0" layoutY="151.0" prefHeight="25.0" prefWidth="149.0" promptText="Preço" />
-      <TextField fx:id="quantidade" layoutX="341.0" layoutY="212.0" prefHeight="25.0" prefWidth="149.0" promptText="Quantidade" />
-      <Text layoutX="290.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO DE PRODUTOS" textAlignment="CENTER" wrappingWidth="251.759765625">
+      <Button fx:id="btnOnAction" layoutX="146.0" layoutY="434.0" mnemonicParsing="false" onAction="#btnCadastrarOnAction" text="CADASTRAR" />
+      <TextField fx:id="nome" layoutX="114.0" layoutY="95.0" promptText="Name" />
+      <TextField fx:id="preco" layoutX="114.0" layoutY="150.0" prefHeight="25.0" prefWidth="149.0" promptText="Preço" />
+      <TextField fx:id="quantidade" layoutX="113.0" layoutY="206.0" prefHeight="25.0" prefWidth="149.0" promptText="Quantidade" />
+      <Text layoutX="62.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO DE PRODUTOS" textAlignment="CENTER" wrappingWidth="251.759765625">
          <font>
             <Font name="Arial Bold" size="16.0" />
          </font></Text>
-      <TextArea fx:id="description" layoutX="341.0" layoutY="332.0" prefHeight="95.0" prefWidth="149.0" promptText="Description" />
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="810.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <ComboBox layoutX="341.0" layoutY="269.0" prefWidth="150.0" promptText="Categorias" />
+      <TextArea fx:id="description" layoutX="113.0" layoutY="318.0" prefHeight="95.0" prefWidth="149.0" promptText="Description" />
+      <ComboBox  fx:id="comboBox" layoutX="113.0" layoutY="256.0" prefWidth="150.0" promptText="Categorias" />
+      <ToolBar layoutX="1.0" prefHeight="40.0" prefWidth="898.0">
+        <items>
+            <Button fx:id="btnNewCategory" mnemonicParsing="false" onAction="#btnActionNovaCategoria" text="Nova Categoria" />
+          <Button fx:id="btnVoltar" mnemonicParsing="false" onAction="#btnActionBack" text="Voltar" />
+        </items>
+      </ToolBar>
+      <Label layoutX="483.0" layoutY="60.0" prefHeight="25.0" prefWidth="200.0" text="REMOÇÃO DE PRODUTO">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="name" layoutX="509.0" layoutY="107.0" promptText="Nome" />
+      <Button fx:id="btnDeletarProduto" layoutX="552.0" layoutY="150.0" mnemonicParsing="false" onAction="#btnDeletarOnAction" text="DELETAR" />
    </children>
 </AnchorPane>

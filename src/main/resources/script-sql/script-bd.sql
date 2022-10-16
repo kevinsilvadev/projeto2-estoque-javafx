@@ -5,17 +5,16 @@
 
 create table produtos (
 	id_produto SERIAL,
-	id_categorias int,
+	name_categoria VARCHAR NOT NULL,
 	name VARCHAR NOT NULL,
 	price INTEGER NOT NULL,
 	qtd INTEGER NOT NULL,
 	PRIMARY KEY ( id_produto ),
-  	CONSTRAINT  FK_produtos_categoria  FOREIGN KEY ( id_categorias) REFERENCES  categoria  ( id_categorias)
+  	CONSTRAINT  FK_produtos_categoria  FOREIGN KEY ( name_categoria) REFERENCES  categoria  (name)
 );
 
 create table categoria (
-	id_categorias SERIAL,
 	name VARCHAR NOT NULL,
-	PRIMARY KEY (id_categorias),
-  	constraint id_categorias_unique  UNIQUE ( id_categorias )
+	PRIMARY KEY (name),
+  	constraint name_unique  UNIQUE ( name )
 )

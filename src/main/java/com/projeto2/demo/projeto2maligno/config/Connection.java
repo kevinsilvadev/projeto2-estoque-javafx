@@ -56,7 +56,7 @@ public class Connection {
         try {
             return getStatment().executeQuery(query);
         }catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+            ex.printStackTrace();
             return null;
         }
     }

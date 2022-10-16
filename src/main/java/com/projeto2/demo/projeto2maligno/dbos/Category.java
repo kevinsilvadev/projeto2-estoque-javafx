@@ -1,10 +1,11 @@
 package com.projeto2.demo.projeto2maligno.dbos;
 
+import com.projeto2.demo.projeto2maligno.config.Alerts;
+import javafx.scene.control.Alert;
+
 import java.util.Objects;
 
 public class Category {
-
-    private int id_categorias;
 
     private String name;
 
@@ -12,8 +13,9 @@ public class Category {
     }
 
     public Category(String name) throws Exception {
-        if(name == "" || name == null) {
-            throw new Exception("ERRO");
+        if(name.isBlank() || name.isEmpty()) {
+            Alerts.showAlert("ERROR", "NOME DA CATEGORIA INVÁLIDA", null, Alert.AlertType.ERROR);
+            throw new Exception("Nome da categoria inválida");
         }
         this.name = name;
     }
@@ -26,6 +28,8 @@ public class Category {
         this.name = name;
     }
 
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -36,13 +40,14 @@ public class Category {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        int ret = 7;
+        if (this.name != null) ret = 7 * ret + this.name.hashCode();
+        if (ret < 0) ret=-ret;
+        return ret;
     }
 
     @Override
     public String toString() {
-        return "Categorias{" +
-                "name='" + name + '\'' +
-                '}';
+        return getName();
     }
 }
