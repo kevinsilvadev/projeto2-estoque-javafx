@@ -1,25 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="196.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.NewCategoryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="713.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.NewCategoryController">
    <children>
-      <TextField fx:id="name" layoutX="58.0" layoutY="85.0" prefHeight="25.0" prefWidth="215.0" promptText="Name" />
-      <Button layoutX="132.0" layoutY="127.0" mnemonicParsing="false" onAction="#btnCadastrarOnAction" text="Cadastrar" />
-      <Text layoutX="58.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nova Categoria" wrappingWidth="165.68017578125">
+      <TextField fx:id="name" layoutX="36.0" layoutY="93.0" prefHeight="25.0" prefWidth="153.0" promptText="Name" />
+      <Button layoutX="71.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnCadastrarOnAction" text="Cadastrar" />
+      <Text layoutX="36.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nova Categoria" wrappingWidth="165.68017578125">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <ToolBar layoutX="-1.0" prefHeight="35.0" prefWidth="526.0">
+      <ToolBar layoutX="-1.0" prefHeight="35.0" prefWidth="821.0">
         <items>
-          <Button onAction="#btnActionBack" fx:id="btnVoltar" mnemonicParsing="false" text="Voltar" />
+          <Button fx:id="btnVoltar" mnemonicParsing="false" onAction="#btnActionBack" text="Voltar" />
+            <Button fx:id="btnListarCategorias" mnemonicParsing="false"  onAction="#btnAtualizarOnAction" text="Lista de Categorias" />
         </items>
       </ToolBar>
+      <TextField fx:id="deletarCategoria" layoutX="382.0" layoutY="93.0" prefHeight="25.0" prefWidth="142.0" promptText="Name" />
+      <Label layoutX="368.0" layoutY="59.0" prefHeight="21.0" prefWidth="184.0" text="REMOÇÃO DE CATEGORIA">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnDeletar" layoutX="432.0" layoutY="135.0" mnemonicParsing="false" text="Deletar" />
+      <Label layoutX="767.0" layoutY="61.0" text="ATUALIZAR CATEGORIA" />
+      <TextField fx:id="nomeAntigo" layoutX="767.0" layoutY="118.0" prefHeight="25.0" prefWidth="142.0" promptText="Name" />
+      <Button fx:id="btnAtualizarCategoria" onAction="#btnAtualizarCategoriaOnAction" layoutX="800.0" layoutY="227.0" mnemonicParsing="false" text="Atualizar" />
+      <TextField fx:id="nomeNovo" layoutX="768.0" layoutY="176.0" prefHeight="25.0" prefWidth="142.0" promptText="Nome Atualizado" />
+      <Label layoutX="759.0" layoutY="85.0" text="Digite a categoria que deseja atualizar:" />
+      <Label layoutX="768.0" layoutY="152.0" text="Novo nome:" />
    </children>
 </AnchorPane>

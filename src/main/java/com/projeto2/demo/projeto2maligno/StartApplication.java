@@ -1,20 +1,18 @@
 package com.projeto2.demo.projeto2maligno;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.Objects;
 
 public class StartApplication extends Application {
     private static Scene telaCadastrarProdutos;
     private static Scene telaNewCategory;
+    private static  Scene telaListarCategoria;
     private static Scene telaHome;
     private static Stage stage;
-
     private static Scene telaTableView;
 
     @Override
@@ -31,11 +29,15 @@ public class StartApplication extends Application {
         Parent parentNewCategory = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("new-category-view.fxml")));
         telaNewCategory = new Scene(parentNewCategory, 640,400);
 
-         Parent parentTableView = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("table-view.fxml")));
-         telaTableView = new Scene(parentTableView, 640,400);
+        Parent parentTableView = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("table-view.fxml")));
+        telaTableView = new Scene(parentTableView, 640,400);
 
-        stage.setScene(telaTableView);
+        Parent parentListCategoria = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("listar-categoria-view.fxml")));
+        telaListarCategoria = new Scene(parentListCategoria, 640,400);
+
+        stage.setScene(telaListarCategoria);
         stage.show();
+
     }
 
     public static void changeScreen(String src) {
@@ -51,6 +53,9 @@ public class StartApplication extends Application {
                 break;
             case "table-view.fxml":
                 stage.setScene(telaTableView);
+                break;
+            case "listar-categoria-view.fxml":
+                stage.setScene(telaListarCategoria);
                 break;
         }
     }

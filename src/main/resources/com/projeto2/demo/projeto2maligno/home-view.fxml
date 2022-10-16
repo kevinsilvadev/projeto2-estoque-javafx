@@ -10,7 +10,7 @@
         <items>
           <Button fx:id="btnNewProduct" mnemonicParsing="false" onAction="#btnActionNewProduct" text="Novo Produto" />
             <Button fx:id="btnNewCategory" mnemonicParsing="false" onAction="#btnActionNewCategory" text="Nova Categoria" />
-            <Button fx:id="btnConsultar"  mnemonicParsing="false" onAction="#btnActionConsultar" text="Consulta" />
+            <Button fx:id="btnConsultar" mnemonicParsing="false" onAction="#btnActionConsultar" text="Consulta" />
         </items>
       </ToolBar>
    </children>

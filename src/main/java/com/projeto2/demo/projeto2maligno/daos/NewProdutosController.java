@@ -5,12 +5,15 @@ import com.projeto2.demo.projeto2maligno.config.Alerts;
 import com.projeto2.demo.projeto2maligno.config.Connection;
 import com.projeto2.demo.projeto2maligno.dbos.Category;
 import com.projeto2.demo.projeto2maligno.dbos.Product;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -49,14 +52,37 @@ public  class NewProdutosController implements Initializable {
     @FXML
     private  ComboBox<Category> comboBox;
 
+    @FXML
+    private TextField nomeAntigo;
+
+    @FXML
+    private TextField novoNome;
+
+    @FXML
+    private TextField novoPreco;
+
+    @FXML
+    private TextField novaQuantidade;
+
+    @FXML
+    private TextArea novaDescricao;
+
+    @FXML
+    private Button btnAtualizarProduto;
+
+    @FXML
+    private ComboBox<Category> comboBoxNovaCategoria;
+
      List<Category> categoryList = new ArrayList<>();
 
      ObservableList<Category> categories;
 
+    List<Category> categoryNewList = new ArrayList<>();
+
+    ObservableList<Category> newCategories;
 
     //Conexão com o banco
     final Connection c = new Connection("PostgreSql","localhost","5432","projeto2-estoque","postgres","kevin");
-
 
     private void cadastroDeProduto () {
         try {
@@ -79,15 +105,28 @@ public  class NewProdutosController implements Initializable {
         Alerts.showAlert("PRODUTO DELETADO", "PRODUTO DELETADO COM SUCESSO",null, Alert.AlertType.INFORMATION);
     }
 
-    private void atualizarProdutos() {
-        //code
+    private void atualizarProdutos() throws Exception {
+        Category cb = comboBoxNovaCategoria.getSelectionModel().getSelectedItem();
+        Product p1 = new Product(novoNome.getText(),Double.valueOf(novoPreco.getText()),
+                Integer.valueOf(novaQuantidade.getText()),
+                novaDescricao.getText(),
+                String.valueOf(cb));
+        c.conect();
+        c.query("UPDATE PRODUTOS " +
+                "SET name = '"+p1.getName()+"', price = "+p1.getPreco()+", qtd = "+ p1.getQtd()+", description = '"+p1.getDescription()+"', name_categoria = '"+p1.getName_categoria()+"' where name = '"+nomeAntigo.getText()+"'");
+        c.disconect();
     }
 
+    @FXML
+    protected void btnActionAtualizarProdutos(ActionEvent actionEvent) throws Exception {
+        atualizarProdutos();
+    }
 
     @FXML
     protected void btnActionBack(ActionEvent actionEvent) {
         StartApplication.changeScreen("home-view.fxml");
     }
+
 
     @FXML
     protected void btnActionNovaCategoria(ActionEvent actionEvent) {
@@ -109,12 +148,14 @@ public  class NewProdutosController implements Initializable {
         name.clear();
     }
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         c.conect();
         ResultSet rs =  c.query("select * from categoria");
 
         while (true) {
+
             try {
                 if (!rs.next()) break;
             } catch (SQLException e) {
@@ -122,6 +163,7 @@ public  class NewProdutosController implements Initializable {
             }
             try {
                 categoryList.add(new Category(rs.getString("name")));
+                categoryNewList.add(new Category(rs.getString("name")));
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -133,6 +175,9 @@ public  class NewProdutosController implements Initializable {
         }
         categories = FXCollections.observableList(categoryList);
         comboBox.setItems(categories);
+
+        newCategories = FXCollections.observableList(categoryNewList);
+        comboBoxNovaCategoria.setItems(newCategories);
         c.disconect();
     }
 }

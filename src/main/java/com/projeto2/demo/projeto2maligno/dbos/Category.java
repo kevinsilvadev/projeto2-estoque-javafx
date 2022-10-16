@@ -3,7 +3,6 @@ package com.projeto2.demo.projeto2maligno.dbos;
 import com.projeto2.demo.projeto2maligno.config.Alerts;
 import javafx.scene.control.Alert;
 
-import java.util.Objects;
 
 public class Category {
 
@@ -27,7 +26,6 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
-
 
 
     @Override

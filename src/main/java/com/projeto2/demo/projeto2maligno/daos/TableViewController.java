@@ -58,7 +58,6 @@ public  class TableViewController implements Initializable {
     ObservableList<Product> list = FXCollections.observableArrayList();
 
 
-
     //Conexão com o banco
     final Connection c = new Connection("PostgreSql","localhost","5432","projeto2-estoque","postgres","kevin");
 
@@ -87,7 +86,6 @@ public  class TableViewController implements Initializable {
 
     @FXML
     public void btnConsultarOnAction() throws Exception{
-
     }
 
     @FXML

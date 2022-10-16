@@ -1,7 +1,5 @@
 package com.projeto2.demo.projeto2maligno.daos;
-
 import com.projeto2.demo.projeto2maligno.StartApplication;
-import com.projeto2.demo.projeto2maligno.config.Connection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

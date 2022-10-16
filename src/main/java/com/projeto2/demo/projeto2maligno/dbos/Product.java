@@ -9,15 +9,11 @@ public class Product {
 
     private int id_produto;
 
-
     private String name;
     private Double preco;
     private Integer qtd;
     private String description;
-
     private String name_categoria;
-
-
 
     public Product(){
     }
