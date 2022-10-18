@@ -5,16 +5,12 @@ import com.projeto2.demo.projeto2maligno.config.Alerts;
 import com.projeto2.demo.projeto2maligno.config.Connection;
 import com.projeto2.demo.projeto2maligno.dbos.Category;
 import com.projeto2.demo.projeto2maligno.dbos.Product;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.util.Duration;
-
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -87,47 +83,108 @@ public  class NewProdutosController implements Initializable {
     //Conexão com o banco
     final Connection c = new Connection("PostgreSql","localhost","5432","projeto2-estoque","emiliobiasi","senha37900");
 
+    ObservableList<Product> list = FXCollections.observableArrayList();
+
+    private void  findProduct() throws Exception {
+        c.conect();
+        ResultSet rs =  c.query("select * from produtos");
+        list.clear();
+        while (rs.next()) {
+            list.addAll(new Product(rs.getString("name"),rs.getDouble("price"), rs.getInt("qtd"), rs.getString("description"),rs.getString("name_categoria")));
+        }
+    }
     private void cadastroDeProduto () {
         try {
-            /*
-            if (nome.getText() == nomeDoObjetoDaLista) {
-                Alert("JA TEM PRODUTO DESSE TIPO AI NO BANCO, MAGRELO!");
-            } else {
-            */
+            findProduct();
+            list.stream().forEach(
+                    x -> {
+                        if (nome.getText().toLowerCase().equals(x.getName())) {
+                            Alerts.showAlert("ERRO", "O PRODUTO JÁ EXISTE NA BASE DE DADOS", null, Alert.AlertType.ERROR);
+                            try {
+                                throw new Exception("O PRODUTO JÁ EXISTE NA BASE DE DADOS");
+                            } catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
+                    }
+            );
+            System.out.println(list);
             Product p =  new Product(nome.getText(), Double.valueOf(preco.getText()), Integer.valueOf(quantidade.getText()),description.getText(), null);
             c.conect();
             Category cb = comboBox.getSelectionModel().getSelectedItem();
             c.query("insert into produtos (name_categoria, name, price, qtd, description) values ('"+cb+"', " +
-                    "'"+p.getName()+"', "+p.getPreco()+", "+p.getQtd()+", '"+p.getDescription()+"')");
-            Alerts.showAlert("SUCESS", "PRODUTO CADASTRADO COM SUCESSO", null, Alert.AlertType.INFORMATION);
+                    "'"+p.getName().toLowerCase()+"', "+p.getPreco()+", "+p.getQtd()+", '"+p.getDescription().toLowerCase()+"')");
+            Alerts.showAlert("PRODUTO INSERIDO!", "PRODUTO CADASTRADO COM SUCESSO", null, Alert.AlertType.INFORMATION);
         }catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    private void  deletarProduto()  {
-        c.conect();
-        System.out.println("Name: " + name.getText());
-        c.query("delete from produtos where name = '"+name.getText()+"';");
-        c.disconect();
-        Alerts.showAlert("PRODUTO DELETADO", "PRODUTO DELETADO COM SUCESSO",null, Alert.AlertType.INFORMATION);
+    private void  deletarProduto() throws Exception {
+        try {
+            int bool = 0;
+            findProduct();
+            for (Product x : list) {
+                if (name.getText().toLowerCase().equals(x.getName())) {
+                    c.conect();
+                    System.out.println("Name: " + name.getText().toLowerCase());
+                    c.query("delete from produtos where name = '" + name.getText().toLowerCase() + "';");
+                    c.disconect();
+                    Alerts.showAlert("PRODUTO DELETADO", "PRODUTO DELETADO COM SUCESSO", null, Alert.AlertType.INFORMATION);
+                    bool = 1;
+                }
+            }
+            if (bool == 0) {
+                Alerts.showAlert("ERRO", "O PRODUTO NÃO EXISTE NA BASE DE DADOS", null, Alert.AlertType.ERROR);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     private void atualizarProdutos() throws Exception {
-        /*
-        if (novoNome.getText() == nomeDoObjetoDaLista) {
-            Alert("JA TEM PRODUTO DESSE TIPO AI NO BANCO, MAGRELO!");
-        } else {
-        */
-        Category cb = comboBoxNovaCategoria.getSelectionModel().getSelectedItem();
-        Product p1 = new Product(novoNome.getText(),Double.valueOf(novoPreco.getText()),
-                Integer.valueOf(novaQuantidade.getText()),
-                novaDescricao.getText(),
-                String.valueOf(cb));
-        c.conect();
-        c.query("UPDATE PRODUTOS " +
-                "SET name = '"+p1.getName()+"', price = "+p1.getPreco()+", qtd = "+ p1.getQtd()+", description = '"+p1.getDescription()+"', name_categoria = '"+p1.getName_categoria()+"' where name = '"+nomeAntigo.getText()+"'");
-        c.disconect();
+        try {
+            int bool = 0;
+            findProduct();
+            for (Product x : list) {
+                if (nomeAntigo.getText().toLowerCase().equals(x.getName())) {
+                    for (Product z : list){
+                        if (novoNome.getText().toLowerCase().equals(z.getName()) && !novoNome.getText().toLowerCase().equals(nomeAntigo.getText().toLowerCase())) {
+                            Alerts.showAlert("ERRO", "NÃO FOI POSSÍVEL ATUALIZAR PRODUTO, POIS NOME ATUALIZADO JÁ EXISTE", null, Alert.AlertType.ERROR);
+                            throw new Exception("NÃO FOI POSSÍVEL ATUALIZAR PRODUTO");
+                        }
+                    }
+                }
+            }
+            for (Product w : list){
+                if (nomeAntigo.getText().toLowerCase().equals(w.getName())) {
+
+                    Category cb = comboBoxNovaCategoria.getSelectionModel().getSelectedItem();
+                    Product p1 = new Product(novoNome.getText().toLowerCase(),Double.valueOf(novoPreco.getText()),
+                            Integer.valueOf(novaQuantidade.getText()),
+                            novaDescricao.getText().toLowerCase(),
+                            String.valueOf(cb));
+                    c.conect();
+                    c.query("UPDATE PRODUTOS " +
+                            "SET name = '"+p1.getName().toLowerCase()+"', " +
+                            "price = "+p1.getPreco()+", " +
+                            "qtd = "+ p1.getQtd()+", " +
+                            "description = '"+p1.getDescription().toLowerCase()+"', " +
+                            "name_categoria = '"+p1.getName_categoria().toLowerCase()+"' " +
+                            "where name = '"+nomeAntigo.getText().toLowerCase()+"'");
+                    Alerts.showAlert("PRODUTO ATUALIZADO", "PRODUTO ATUALIZADO COM SUCESSO", null, Alert.AlertType.INFORMATION);
+                    c.disconect();
+                    bool = 1;
+                }
+            }
+            if (bool == 0) {
+                Alerts.showAlert("ERRO", "NÃO FOI POSSÍVEL ATUALIZAR PRODUTO, POIS PRODUTO DIGITADO NÃO EXISTE", null, Alert.AlertType.ERROR);
+                throw new Exception("NÃO FOI POSSÍVEL ATUALIZAR PRODUTO");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 
     @FXML
@@ -160,7 +217,7 @@ public  class NewProdutosController implements Initializable {
     }
 
     @FXML
-    public void btnDeletarOnAction() {
+    public void btnDeletarOnAction() throws Exception {
         deletarProduto();
         name.clear();
     }

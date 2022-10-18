@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -15,15 +14,12 @@
             <TableColumn fx:id="name" prefWidth="170.0" text="Name" />
          </columns>
       </TableView>
-      <TextField layoutX="7.0" layoutY="38.0" promptText="Nome" />
-      <Label layoutX="14.0" layoutY="19.0" prefHeight="17.0" prefWidth="110.0" text="Consultar por nome:" />
-      <Label contentDisplay="CENTER" layoutX="209.0" layoutY="2.0" prefHeight="25.0" prefWidth="260.0" text="VISUALIZAÇÃO DA TABELA DE CATEGORIAS" textAlignment="CENTER">
+      <Label contentDisplay="CENTER" layoutX="209.0" layoutY="24.0" prefHeight="25.0" prefWidth="260.0" text="VISUALIZAÇÃO DA TABELA DE CATEGORIAS" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="btnConsultar" layoutX="174.0" layoutY="38.0" mnemonicParsing="false" text="Consultar" />
-      <Button fx:id="btnVoltar" layoutX="604.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnActionBack" prefHeight="25.0" prefWidth="59.0" text="Voltar" />
-      <Button fx:id="btnAtualizarCategoria" layoutX="292.0" layoutY="38.0" mnemonicParsing="false" onAction="#btnAtualizarOnAction" text="Atualizar Dados" />
+      <Button fx:id="btnVoltar" layoutX="604.0" layoutY="43.0" mnemonicParsing="false" onAction="#btnActionBack" prefHeight="25.0" prefWidth="59.0" text="Voltar" />
+      <Button fx:id="btnAtualizarCategoria" layoutX="14.0" layoutY="43.0" mnemonicParsing="false" onAction="#btnAtualizarOnAction" text="Atualizar Dados" />
    </children>
 </AnchorPane>

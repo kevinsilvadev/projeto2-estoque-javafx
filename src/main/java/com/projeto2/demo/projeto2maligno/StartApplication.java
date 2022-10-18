@@ -37,7 +37,6 @@ public class StartApplication extends Application {
 
         stage.setScene(telaHome);
         stage.show();
-
     }
 
     public static void changeScreen(String src) {

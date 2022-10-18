@@ -29,17 +29,18 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btnDeletar" layoutX="305.0" layoutY="148.0" mnemonicParsing="false" text="Remover" />
+      <Button fx:id="btnDeletar" layoutX="305.0" layoutY="148.0" mnemonicParsing="false" onAction="#btnDeletarOnAction" text="Remover" />
       <Label layoutX="478.0" layoutY="60.0" text="ATUALIZAR CATEGORIA">
          <font>
             <Font size="15.0" />
          </font></Label>
       <TextField fx:id="nomeAntigo" layoutX="478.0" layoutY="105.0" prefHeight="26.0" prefWidth="153.0" promptText="Name" />
-      <Button fx:id="btnAtualizarCategoria" layoutX="526.0" layoutY="201.0" mnemonicParsing="false" onAction="#btnAtualizarCategoriaOnAction" text="Atualizar" />
+      <Button fx:id="btnAtualizarCategoria" layoutX="522.0" layoutY="196.0" mnemonicParsing="false" onAction="#btnAtualizarCategoriaOnAction" text="Atualizar" />
       <TextField fx:id="nomeNovo" layoutX="478.0" layoutY="161.0" prefHeight="26.0" prefWidth="153.0" promptText="Nome Atualizado" />
       <Label layoutX="478.0" layoutY="85.0" text="Digite a categoria que deseja atualizar:" />
       <Label layoutX="478.0" layoutY="140.0" text="Novo nome:" />
       <Label layoutX="36.0" layoutY="85.0" text="Nome da categoria:" />
       <Label layoutX="257.0" layoutY="85.0" text="Nome da categoria:" />
+      <Label layoutX="212.0" layoutY="37.0" prefHeight="19.0" prefWidth="491.0" text="Certifique-se de não ter elementos relacionados a categoria ao REMOVER ou ATUALIZAR" />
    </children>
 </AnchorPane>
