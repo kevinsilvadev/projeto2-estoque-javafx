@@ -190,6 +190,11 @@ public  class NewProdutosController implements Initializable {
     @FXML
     protected void btnActionAtualizarProdutos(ActionEvent actionEvent) throws Exception {
         atualizarProdutos();
+        novoNome.clear();
+        nomeAntigo.clear();
+        novaDescricao.clear();
+        novaQuantidade.clear();
+        novoPreco.clear();
     }
 
     @FXML
