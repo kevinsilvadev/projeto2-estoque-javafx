@@ -8,33 +8,38 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="713.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.NewCategoryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="713.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.NewCategoryController">
    <children>
-      <TextField fx:id="name" layoutX="36.0" layoutY="93.0" prefHeight="25.0" prefWidth="153.0" promptText="Name" />
-      <Button layoutX="71.0" layoutY="135.0" mnemonicParsing="false" onAction="#btnCadastrarOnAction" text="Cadastrar" />
-      <Text layoutX="36.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nova Categoria" wrappingWidth="165.68017578125">
+      <TextField fx:id="name" layoutX="36.0" layoutY="105.0" prefHeight="25.0" prefWidth="153.0" promptText="Name" />
+      <Button layoutX="77.0" layoutY="139.0" mnemonicParsing="false" onAction="#btnCadastrarOnAction" text="Cadastrar" />
+      <Text layoutX="36.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOVA CATEGORIA" wrappingWidth="128.68017578125">
          <font>
-            <Font size="15.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </Text>
       <ToolBar layoutX="-1.0" prefHeight="35.0" prefWidth="821.0">
         <items>
           <Button fx:id="btnVoltar" mnemonicParsing="false" onAction="#btnActionBack" text="Voltar" />
-            <Button fx:id="btnListarCategorias" mnemonicParsing="false"  onAction="#btnAtualizarOnAction" text="Lista de Categorias" />
+            <Button fx:id="btnListarCategorias" mnemonicParsing="false" onAction="#btnAtualizarOnAction" text="Lista de Categorias" />
         </items>
       </ToolBar>
-      <TextField fx:id="deletarCategoria" layoutX="382.0" layoutY="93.0" prefHeight="25.0" prefWidth="142.0" promptText="Name" />
-      <Label layoutX="368.0" layoutY="59.0" prefHeight="21.0" prefWidth="184.0" text="REMOÇÃO DE CATEGORIA">
+      <TextField fx:id="deletarCategoria" layoutX="257.0" layoutY="105.0" prefHeight="26.0" prefWidth="153.0" promptText="Name" />
+      <Label layoutX="257.0" layoutY="59.0" prefHeight="21.0" prefWidth="153.0" text="REMOVER CATEGORIA">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btnDeletar" layoutX="432.0" layoutY="135.0" mnemonicParsing="false" text="Deletar" />
-      <Label layoutX="767.0" layoutY="61.0" text="ATUALIZAR CATEGORIA" />
-      <TextField fx:id="nomeAntigo" layoutX="767.0" layoutY="118.0" prefHeight="25.0" prefWidth="142.0" promptText="Name" />
-      <Button fx:id="btnAtualizarCategoria" onAction="#btnAtualizarCategoriaOnAction" layoutX="800.0" layoutY="227.0" mnemonicParsing="false" text="Atualizar" />
-      <TextField fx:id="nomeNovo" layoutX="768.0" layoutY="176.0" prefHeight="25.0" prefWidth="142.0" promptText="Nome Atualizado" />
-      <Label layoutX="759.0" layoutY="85.0" text="Digite a categoria que deseja atualizar:" />
-      <Label layoutX="768.0" layoutY="152.0" text="Novo nome:" />
+      <Button fx:id="btnDeletar" layoutX="305.0" layoutY="148.0" mnemonicParsing="false" text="Remover" />
+      <Label layoutX="478.0" layoutY="60.0" text="ATUALIZAR CATEGORIA">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <TextField fx:id="nomeAntigo" layoutX="478.0" layoutY="105.0" prefHeight="26.0" prefWidth="153.0" promptText="Name" />
+      <Button fx:id="btnAtualizarCategoria" layoutX="526.0" layoutY="201.0" mnemonicParsing="false" onAction="#btnAtualizarCategoriaOnAction" text="Atualizar" />
+      <TextField fx:id="nomeNovo" layoutX="478.0" layoutY="161.0" prefHeight="26.0" prefWidth="153.0" promptText="Nome Atualizado" />
+      <Label layoutX="478.0" layoutY="85.0" text="Digite a categoria que deseja atualizar:" />
+      <Label layoutX="478.0" layoutY="140.0" text="Novo nome:" />
+      <Label layoutX="36.0" layoutY="85.0" text="Nome da categoria:" />
+      <Label layoutX="257.0" layoutY="85.0" text="Nome da categoria:" />
    </children>
 </AnchorPane>

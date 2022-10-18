@@ -41,6 +41,9 @@ public  class NewProdutosController implements Initializable {
     private Button btnVoltar;
 
     @FXML
+    private Button btnVisualizarProdutos;
+
+    @FXML
     private Button btnNewCategory;
 
     @FXML
@@ -82,10 +85,15 @@ public  class NewProdutosController implements Initializable {
     ObservableList<Category> newCategories;
 
     //Conexão com o banco
-    final Connection c = new Connection("PostgreSql","localhost","5432","projeto2-estoque","postgres","kevin");
+    final Connection c = new Connection("PostgreSql","localhost","5432","projeto2-estoque","emiliobiasi","senha37900");
 
     private void cadastroDeProduto () {
         try {
+            /*
+            if (nome.getText() == nomeDoObjetoDaLista) {
+                Alert("JA TEM PRODUTO DESSE TIPO AI NO BANCO, MAGRELO!");
+            } else {
+            */
             Product p =  new Product(nome.getText(), Double.valueOf(preco.getText()), Integer.valueOf(quantidade.getText()),description.getText(), null);
             c.conect();
             Category cb = comboBox.getSelectionModel().getSelectedItem();
@@ -106,6 +114,11 @@ public  class NewProdutosController implements Initializable {
     }
 
     private void atualizarProdutos() throws Exception {
+        /*
+        if (novoNome.getText() == nomeDoObjetoDaLista) {
+            Alert("JA TEM PRODUTO DESSE TIPO AI NO BANCO, MAGRELO!");
+        } else {
+        */
         Category cb = comboBoxNovaCategoria.getSelectionModel().getSelectedItem();
         Product p1 = new Product(novoNome.getText(),Double.valueOf(novoPreco.getText()),
                 Integer.valueOf(novaQuantidade.getText()),
@@ -127,6 +140,10 @@ public  class NewProdutosController implements Initializable {
         StartApplication.changeScreen("home-view.fxml");
     }
 
+    @FXML
+    public void btnActionVisualizarProdutos() {
+        StartApplication.changeScreen("table-view.fxml");
+    }
 
     @FXML
     protected void btnActionNovaCategoria(ActionEvent actionEvent) {

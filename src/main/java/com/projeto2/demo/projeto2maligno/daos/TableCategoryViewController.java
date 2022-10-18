@@ -29,7 +29,7 @@ public class TableCategoryViewController implements Initializable {
     @FXML
     private Button btnAtualizarCategoria;
 
-    final Connection c = new Connection("PostgreSql","localhost","5432","projeto2-estoque","postgres","kevin");
+    final Connection c = new Connection("PostgreSql","localhost","5432","projeto2-estoque","emiliobiasi","senha37900");
 
 
     public TableCategoryViewController() throws Exception {

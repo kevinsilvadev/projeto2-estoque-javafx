@@ -35,7 +35,7 @@ public class StartApplication extends Application {
         Parent parentListCategoria = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("listar-categoria-view.fxml")));
         telaListarCategoria = new Scene(parentListCategoria, 640,400);
 
-        stage.setScene(telaListarCategoria);
+        stage.setScene(telaHome);
         stage.show();
 
     }

@@ -41,13 +41,18 @@ public class NewCategoryController  {
 
 
     //Conexão com banco
-   final Connection c = new Connection("PostgreSql","localhost","5432","projeto2-estoque","postgres","kevin");
+   final Connection c = new Connection("PostgreSql","localhost","5432","projeto2-estoque","emiliobiasi","senha37900");
 
 
     public NewCategoryController() throws Exception {
     }
 
     private void atualizarCategoria() throws Exception {
+        /*
+        if (nomeNovo.getText() == nomeDoObjetoDaLista) {
+            Alert("JA TEM CATEGORIA DESSE TIPO AI NO BANCO, MAGRELO!");
+        } else {
+        */
         c.conect();
         Category ct1 = new Category(nomeAntigo.getText());
         Category ct2 = new Category(nomeNovo.getText());
@@ -55,9 +60,16 @@ public class NewCategoryController  {
     }
 
     private void newCategory () throws Exception {
-            Category category =  new Category(name.getText());
-            c.conect();
-            c.query("insert into categoria (name) values ('"+category.getName()+"')");
+
+        /*
+        if (nome.getText() == nomeDoObjetoDaLista) {
+            Alert("JA TEM CATEGORIA DESSE TIPO AI NO BANCO, MAGRELO!");
+        } else {
+        */
+        Category category =  new Category(name.getText());
+        c.conect();
+        c.query("insert into categoria (name) values ('"+category.getName()+"')");
+
     }
 
 

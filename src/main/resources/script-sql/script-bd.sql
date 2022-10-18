@@ -9,6 +9,7 @@ create table produtos (
 	name VARCHAR NOT NULL,
 	price INTEGER NOT NULL,
 	qtd INTEGER NOT NULL,
+	description VARCHAR NOT NULL,
 	PRIMARY KEY ( id_produto ),
   	CONSTRAINT  FK_produtos_categoria  FOREIGN KEY ( name_categoria) REFERENCES  categoria  (name)
 );

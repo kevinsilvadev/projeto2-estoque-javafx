@@ -10,43 +10,81 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="878.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.NewProdutosController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="878.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.NewProdutosController">
    <children>
-      <Button fx:id="btnOnAction" layoutX="146.0" layoutY="434.0" mnemonicParsing="false" onAction="#btnCadastrarOnAction" text="CADASTRAR" />
-      <TextField fx:id="nome" layoutX="114.0" layoutY="95.0" promptText="Name" />
-      <TextField fx:id="preco" layoutX="114.0" layoutY="150.0" prefHeight="25.0" prefWidth="149.0" promptText="Preço" />
-      <TextField fx:id="quantidade" layoutX="113.0" layoutY="206.0" prefHeight="25.0" prefWidth="149.0" promptText="Quantidade" />
-      <Text layoutX="62.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO DE PRODUTOS" textAlignment="CENTER" wrappingWidth="251.759765625">
+      <Button fx:id="btnOnAction" layoutX="43.0" layoutY="495.0" mnemonicParsing="false" onAction="#btnCadastrarOnAction" text="CADASTRAR" />
+      <TextField fx:id="nome" layoutX="21.0" layoutY="107.0" prefHeight="26.0" prefWidth="150.0" promptText="Name" />
+      <TextField fx:id="preco" layoutX="21.0" layoutY="163.0" prefHeight="25.0" prefWidth="149.0" promptText="Preço" />
+      <TextField fx:id="quantidade" layoutX="21.0" layoutY="220.0" prefHeight="25.0" prefWidth="149.0" promptText="Quantidade" />
+      <Text layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO DE PRODUTOS" textAlignment="CENTER" wrappingWidth="251.759765625">
          <font>
             <Font name="Arial Bold" size="16.0" />
          </font></Text>
-      <TextArea fx:id="description" layoutX="113.0" layoutY="318.0" prefHeight="95.0" prefWidth="149.0" promptText="Description" />
-      <ComboBox fx:id="comboBox" layoutX="113.0" layoutY="256.0" prefWidth="150.0" promptText="Categorias" />
+      <TextArea fx:id="description" layoutX="21.0" layoutY="380.0" prefHeight="95.0" prefWidth="149.0" promptText="Descrição" />
+      <ComboBox fx:id="comboBox" layoutX="21.0" layoutY="325.0" prefWidth="150.0" promptText="Categorias" />
       <ToolBar layoutX="1.0" prefHeight="40.0" prefWidth="898.0">
         <items>
-            <Button fx:id="btnNewCategory" mnemonicParsing="false" onAction="#btnActionNovaCategoria" text="Nova Categoria" />
           <Button fx:id="btnVoltar" mnemonicParsing="false" onAction="#btnActionBack" text="Voltar" />
+            <Button fx:id="btnNewCategory" mnemonicParsing="false" onAction="#btnActionNovaCategoria" text="Nova Categoria" />
+            <Button fx:id="btnVisualizarProdutos" mnemonicParsing="false" onAction="#btnActionVisualizarProdutos" text="Visualizar Produtos" />
         </items>
       </ToolBar>
-      <Label layoutX="483.0" layoutY="60.0" prefHeight="25.0" prefWidth="200.0" text="REMOÇÃO DE PRODUTO">
+      <Label layoutX="296.0" layoutY="59.0" prefHeight="25.0" prefWidth="200.0" text="REMOÇÃO DE PRODUTO">
          <font>
             <Font name="Arial Bold" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="name" layoutX="509.0" layoutY="107.0" promptText="Nome" />
-      <Button fx:id="btnDeletarProduto" layoutX="552.0" layoutY="150.0" mnemonicParsing="false" onAction="#btnDeletarOnAction" text="DELETAR" />
-      <TextField fx:id="nomeAntigo" layoutX="845.0" layoutY="107.0" promptText="Nome atual" />
-      <TextField fx:id="novoNome" layoutX="845.0" layoutY="150.0" promptText="Novo nome" />
-      <TextField fx:id="novoPreco" layoutX="845.0" layoutY="194.0" promptText="Novo preço" />
-      <TextField fx:id="novaQuantidade" layoutX="845.0" layoutY="244.0" promptText="Nova quantidade" />
-      <Label layoutX="812.0" layoutY="60.0" prefHeight="25.0" prefWidth="200.0" text="REMOÇÃO DE PRODUTO">
+      <TextField fx:id="name" layoutX="316.0" layoutY="107.0" promptText="Nome" />
+      <Button fx:id="btnDeletarProduto" layoutX="360.0" layoutY="150.0" mnemonicParsing="false" onAction="#btnDeletarOnAction" text="DELETAR" />
+      <TextField fx:id="nomeAntigo" layoutX="582.0" layoutY="107.0" promptText="Nome atual" />
+      <TextField fx:id="novoNome" layoutX="582.0" layoutY="163.0" promptText="Novo nome" />
+      <TextField fx:id="novoPreco" layoutX="582.0" layoutY="220.0" promptText="Novo preço" />
+      <TextField fx:id="novaQuantidade" layoutX="582.0" layoutY="280.0" promptText="Nova quantidade" />
+      <Label layoutX="547.0" layoutY="59.0" prefHeight="25.0" prefWidth="230.0" text="ATUALIZAÇÃO DE PRODUTO">
          <font>
             <Font name="Arial Bold" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="btnAtualizarProduto" layoutX="881.0" layoutY="508.0" mnemonicParsing="false" onAction="#btnActionAtualizarProdutos" text="ATUALIZAR" />
-      <Label text="Label" />
-      <TextArea fx:id="novaDescricao" layoutX="846.0" layoutY="351.0" prefHeight="124.0" prefWidth="149.0" promptText="Nova descrição" />
-      <ComboBox fx:id="comboBoxNovaCategoria" layoutX="845.0" layoutY="293.0" prefWidth="150.0" promptText="Categorias" />
+      <Button fx:id="btnAtualizarProduto" layoutX="619.0" layoutY="495.0" mnemonicParsing="false" onAction="#btnActionAtualizarProdutos" text="ATUALIZAR" />
+      <TextArea fx:id="novaDescricao" layoutX="583.0" layoutY="392.0" prefHeight="95.0" prefWidth="159.0" promptText="Nova descrição" />
+      <ComboBox fx:id="comboBoxNovaCategoria" layoutX="583.0" layoutY="338.0" prefHeight="26.0" prefWidth="159.0" promptText="Categorias" />
+      <Label layoutX="21.0" layoutY="85.0" text="Digite o nome:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="142.0" text="Digite o preço:" />
+      <Label layoutX="21.0" layoutY="199.0" text="Digite a quantidade:" />
+      <Label layoutX="21.0" layoutY="262.0" text="Seleciona a Categoria:" />
+      <Label layoutX="21.0" layoutY="285.0" prefHeight="17.0" prefWidth="160.0" text="Aviso: Certifique-se de ja ter" />
+      <Label layoutX="21.0" layoutY="299.0" prefWidth="326.0" text="criado ao menos uma categoria!" />
+      <Label layoutX="23.0" layoutY="363.0" text="Digite uma descrição:" />
+      <Label layoutX="316.0" layoutY="85.0" text="Digite o nome:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="548.0" layoutY="85.0" text="Digite o nome do produto a ser atualizado:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="582.0" layoutY="142.0" text="Novo nome do produto:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="582.0" layoutY="199.0" text="Novo preço do produto:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="582.0" layoutY="254.0" text="Nova quantidade do produto:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="580.0" layoutY="317.0" text="Seleciona a Categoria:" />
+      <Label layoutX="582.0" layoutY="372.0" text="Digite uma descrição:" />
    </children>
 </AnchorPane>

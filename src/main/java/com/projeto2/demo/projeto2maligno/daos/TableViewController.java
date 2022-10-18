@@ -59,7 +59,7 @@ public  class TableViewController implements Initializable {
 
 
     //Conexão com o banco
-    final Connection c = new Connection("PostgreSql","localhost","5432","projeto2-estoque","postgres","kevin");
+    final Connection c = new Connection("PostgreSql","localhost","5432","projeto2-estoque","emiliobiasi","senha37900");
 
     public TableViewController() throws Exception {
     }

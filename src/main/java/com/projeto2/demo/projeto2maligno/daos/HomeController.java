@@ -13,6 +13,9 @@ public class HomeController {
     private Button btnConsultar;
 
     @FXML
+    private Button btnConsultarCategorias;
+
+    @FXML
     private Button btnNewCategory;
     @FXML
     public void btnActionNewProduct(ActionEvent actionEvent) throws Exception {
@@ -27,6 +30,11 @@ public class HomeController {
     @FXML
     public void btnActionConsultar(ActionEvent actionEvent) throws Exception {
         StartApplication.changeScreen("table-view.fxml");
+    }
+
+    @FXML
+    public void btnActionConsultarCategorias(ActionEvent actionEvent) {
+        StartApplication.changeScreen("listar-categoria-view.fxml");
     }
 
 }
