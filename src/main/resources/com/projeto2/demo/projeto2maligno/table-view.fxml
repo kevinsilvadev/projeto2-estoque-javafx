@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.TableViewController">
    <children>
-     <TableView fx:id="table" layoutY="81.0" minWidth="200" prefHeight="320.0" prefWidth="677.0">
+     <TableView fx:id="table" layoutY="81.0" minWidth="200" prefHeight="320.0" prefWidth="677.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
          <columns>
             <TableColumn fx:id="name" prefWidth="127.0" text="Name" />
             <TableColumn fx:id="preco" prefWidth="125.0" text="Preço" />
@@ -23,7 +23,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="btnVoltar" layoutX="604.0" layoutY="48.0" mnemonicParsing="false" onAction="#btnActionBack" prefHeight="25.0" prefWidth="59.0" text="Voltar" />
-      <Button fx:id="btnAtualizar" layoutX="14.0" layoutY="48.0" mnemonicParsing="false" onAction="#btnAtualizarOnAction" text="Atualizar Dados" />
+      <Button fx:id="btnVoltar" layoutX="604.0" layoutY="48.0" mnemonicParsing="false" onAction="#btnActionBack" prefHeight="25.0" prefWidth="59.0" text="Voltar" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="48.0" />
+      <Button fx:id="btnAtualizar" layoutX="14.0" layoutY="48.0" mnemonicParsing="false" onAction="#btnAtualizarOnAction" text="Atualizar Dados" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="48.0" />
    </children>
 </AnchorPane>

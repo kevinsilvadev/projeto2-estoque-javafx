@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="878.0" prefWidth="1338.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.NewProdutosController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="555.0" minWidth="850.0" prefHeight="555.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.NewProdutosController">
    <children>
       <Button fx:id="btnOnAction" layoutX="43.0" layoutY="495.0" mnemonicParsing="false" onAction="#btnCadastrarOnAction" text="CADASTRAR" />
       <TextField fx:id="nome" layoutX="21.0" layoutY="107.0" prefHeight="26.0" prefWidth="150.0" promptText="Name" />
@@ -22,25 +22,25 @@
          </font></Text>
       <TextArea fx:id="description" layoutX="21.0" layoutY="380.0" prefHeight="95.0" prefWidth="149.0" promptText="Descrição" />
       <ComboBox fx:id="comboBox" layoutX="21.0" layoutY="325.0" prefWidth="150.0" promptText="Categorias" />
-      <ToolBar layoutX="1.0" prefHeight="40.0" prefWidth="898.0">
+      <ToolBar layoutX="1.0" prefHeight="40.0" prefWidth="850.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <items>
           <Button fx:id="btnVoltar" mnemonicParsing="false" onAction="#btnActionBack" text="Voltar" />
             <Button fx:id="btnNewCategory" mnemonicParsing="false" onAction="#btnActionNovaCategoria" text="Nova Categoria" />
             <Button fx:id="btnVisualizarProdutos" mnemonicParsing="false" onAction="#btnActionVisualizarProdutos" text="Visualizar Produtos" />
         </items>
       </ToolBar>
-      <Label layoutX="296.0" layoutY="59.0" prefHeight="25.0" prefWidth="200.0" text="REMOÇÃO DE PRODUTO">
+      <Label layoutX="316.0" layoutY="59.0" prefHeight="25.0" prefWidth="200.0" text="REMOÇÃO DE PRODUTO">
          <font>
             <Font name="Arial Bold" size="16.0" />
          </font>
       </Label>
       <TextField fx:id="name" layoutX="316.0" layoutY="107.0" promptText="Nome" />
-      <Button fx:id="btnDeletarProduto" layoutX="360.0" layoutY="150.0" mnemonicParsing="false" onAction="#btnDeletarOnAction" text="DELETAR" />
+      <Button fx:id="btnDeletarProduto" layoutX="320.0" layoutY="138.0" mnemonicParsing="false" onAction="#btnDeletarOnAction" text="DELETAR" />
       <TextField fx:id="nomeAntigo" layoutX="582.0" layoutY="107.0" promptText="Nome atual" />
       <TextField fx:id="novoNome" layoutX="582.0" layoutY="163.0" promptText="Novo nome" />
       <TextField fx:id="novoPreco" layoutX="582.0" layoutY="220.0" promptText="Novo preço" />
       <TextField fx:id="novaQuantidade" layoutX="582.0" layoutY="280.0" promptText="Nova quantidade" />
-      <Label layoutX="547.0" layoutY="59.0" prefHeight="25.0" prefWidth="230.0" text="ATUALIZAÇÃO DE PRODUTO">
+      <Label layoutX="580.0" layoutY="59.0" prefHeight="25.0" prefWidth="230.0" text="ATUALIZAÇÃO DE PRODUTO">
          <font>
             <Font name="Arial Bold" size="16.0" />
          </font>
@@ -64,7 +64,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="548.0" layoutY="85.0" text="Digite o nome do produto a ser atualizado:">
+      <Label layoutX="581.0" layoutY="85.0" text="Digite o nome do produto a ser atualizado:">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

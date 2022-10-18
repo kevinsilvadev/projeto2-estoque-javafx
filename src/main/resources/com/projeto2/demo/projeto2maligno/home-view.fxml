@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="436.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.HomeController">
+<AnchorPane minHeight="436.0" minWidth="546.0" prefHeight="436.0" prefWidth="546.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.HomeController">
    <children>
-      <ToolBar layoutX="2.0" layoutY="2.0" prefHeight="40.0" prefWidth="672.0">
+      <ToolBar layoutX="2.0" layoutY="2.0" prefHeight="40.0" prefWidth="672.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="0.0">
         <items>
           <Button fx:id="btnNewProduct" mnemonicParsing="false" onAction="#btnActionNewProduct" text="Gerenciar Produtos" />
             <Button fx:id="btnNewCategory" mnemonicParsing="false" onAction="#btnActionNewCategory" text="Gerenciar Categorias" />
@@ -16,11 +16,12 @@
             <Button fx:id="btnConsultarCategorias" mnemonicParsing="false" onAction="#btnActionConsultarCategorias" prefHeight="26.0" prefWidth="133.0" text="Consultar Categorias" />
         </items>
       </ToolBar>
-      <Label layoutX="250.0" layoutY="103.0" prefHeight="44.0" prefWidth="177.0" text="Bem-vindo!">
+      <Label layoutX="250.0" layoutY="103.0" prefHeight="44.0" prefWidth="177.0" text="Bem-vindo!" AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="54.0">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-      <Label layoutX="59.0" layoutY="176.0" prefHeight="17.0" prefWidth="559.0" text="Crie suas CATEGORIAS desejadas e seus respectivos PRODUTOS atravez do Menu de botões a cima!" />
+      <Label layoutX="59.0" layoutY="176.0" prefHeight="26.0" prefWidth="559.0" text="Crie suas CATEGORIAS desejadas e seus respectivos " AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="54.0" />
+      <Label layoutX="59.0" layoutY="202.0" prefHeight="26.0" prefWidth="559.0" text="PRODUTOS atravez do Menu de botões a cima!" AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="54.0" />
    </children>
 </AnchorPane>

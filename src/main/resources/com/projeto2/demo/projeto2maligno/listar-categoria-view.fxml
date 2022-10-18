@@ -9,9 +9,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.TableCategoryViewController">
    <children>
-     <TableView fx:id="tableCategoria" layoutY="75.0" minWidth="200" prefHeight="326.0" prefWidth="677.0">
+     <TableView fx:id="tableCategoria" layoutY="75.0" minWidth="200" prefHeight="326.0" prefWidth="677.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="74.0">
          <columns>
-            <TableColumn fx:id="name" prefWidth="170.0" text="Name" />
+            <TableColumn fx:id="name" prefWidth="170.0" text="Nome da Categoria" />
          </columns>
       </TableView>
       <Label contentDisplay="CENTER" layoutX="209.0" layoutY="24.0" prefHeight="25.0" prefWidth="260.0" text="VISUALIZAÇÃO DA TABELA DE CATEGORIAS" textAlignment="CENTER">
@@ -19,7 +19,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="btnVoltar" layoutX="604.0" layoutY="43.0" mnemonicParsing="false" onAction="#btnActionBack" prefHeight="25.0" prefWidth="59.0" text="Voltar" />
-      <Button fx:id="btnAtualizarCategoria" layoutX="14.0" layoutY="43.0" mnemonicParsing="false" onAction="#btnAtualizarOnAction" text="Atualizar Dados" />
+      <Button fx:id="btnVoltar" layoutX="604.0" layoutY="43.0" mnemonicParsing="false" onAction="#btnActionBack" prefHeight="25.0" prefWidth="59.0" text="Voltar" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="43.0" />
+      <Button fx:id="btnAtualizarCategoria" layoutX="14.0" layoutY="43.0" mnemonicParsing="false" onAction="#btnAtualizarOnAction" text="Atualizar Dados" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="43.0" />
    </children>
 </AnchorPane>
