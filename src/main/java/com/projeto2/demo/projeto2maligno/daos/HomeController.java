@@ -20,6 +20,7 @@ public class HomeController {
     @FXML
     public void btnActionNewProduct(ActionEvent actionEvent) throws Exception {
         StartApplication.changeScreen("new-product-view.fxml");
+
     }
 
     @FXML

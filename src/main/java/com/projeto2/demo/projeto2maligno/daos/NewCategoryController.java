@@ -54,9 +54,17 @@ public class NewCategoryController  {
     }
 
     private void atualizarCategoria() throws Exception {
-        try {
             int bool = 0;
             findCategories();
+            findProduct();
+        try {
+            for (Product y : list2) {
+                if (nomeAntigo.getText().toLowerCase().equals(y.getName_categoria())) {
+                    Alerts.showAlert("ERRO", "A CATEGORIA NÃO PODE SER ALTERADA, POIS EXISTEM PRODUTOS ATRELADOS A ELA", null, Alert.AlertType.ERROR);
+                    throw new Exception("A CATEGORIA NÃO PODE SER ALTERADA, POIS EXISTEM PRODUTOS ATRELADOS A ELA");
+                }
+                System.out.println(list2);
+            }
             for (Category x : list) {
                 if (nomeAntigo.getText().toLowerCase().equals(x.getName())) {
                     for (Category z : list){
@@ -99,7 +107,7 @@ public class NewCategoryController  {
     private void  findProduct() throws Exception {
         c.conect();
         ResultSet rs =  c.query("select * from produtos");
-        list.clear();
+        list2.clear();
         while (rs.next()) {
             list2.addAll(new Product(rs.getString("name"),rs.getDouble("price"), rs.getInt("qtd"), rs.getString("description"),rs.getString("name_categoria")));
         }
@@ -145,7 +153,15 @@ public class NewCategoryController  {
     private void  deletarCategoria() throws Exception {
         int bool= 0;
         findCategories();
+        findProduct();
         try {
+            for (Product y : list2) {
+                if (deletarCategoria.getText().toLowerCase().equals(y.getName_categoria())) {
+                    Alerts.showAlert("ERRO", "A CATEGORIA NÃO PODE SER DELETADA, POIS EXISTEM PRODUTOS ATRELADOS A ELA", null, Alert.AlertType.ERROR);
+                    throw new Exception("A CATEGORIA NÃO PODE SER DELETADA, POIS EXISTEM PRODUTOS ATRELADOS A ELA");
+                }
+                System.out.println(list2);
+            }
             for (Category x : list) {
                 if (deletarCategoria.getText().toLowerCase().equals(x.getName())) {
                     c.conect();

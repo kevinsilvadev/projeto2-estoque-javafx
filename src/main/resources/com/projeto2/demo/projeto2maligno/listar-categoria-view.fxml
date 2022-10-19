@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -20,6 +22,13 @@
          </font>
       </Label>
       <Button fx:id="btnVoltar" layoutX="604.0" layoutY="43.0" mnemonicParsing="false" onAction="#btnActionBack" prefHeight="25.0" prefWidth="59.0" text="Voltar" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="43.0" />
-      <Button fx:id="btnAtualizarCategoria" layoutX="14.0" layoutY="43.0" mnemonicParsing="false" onAction="#btnAtualizarOnAction" text="Atualizar Dados" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="43.0" />
+      <Button fx:id="btnAtualizarCategoria" layoutX="14.0" layoutY="43.0" mnemonicParsing="false" onAction="#btnAtualizarOnAction" text="Atualizar Dados" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="43.0">
+         <graphic>
+            <ImageView fitHeight="17.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../images/image-removebg-preview att.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
    </children>
 </AnchorPane>

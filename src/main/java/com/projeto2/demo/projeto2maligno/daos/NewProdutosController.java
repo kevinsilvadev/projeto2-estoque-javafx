@@ -72,6 +72,11 @@ public  class NewProdutosController implements Initializable {
     @FXML
     private ComboBox<Category> comboBoxNovaCategoria;
 
+    @FXML
+    private Button btnRecarregarCategorias;
+
+    @FXML
+    private Button btnRecarregarCategorias1;
      List<Category> categoryList = new ArrayList<>();
 
      ObservableList<Category> categories;
@@ -109,10 +114,10 @@ public  class NewProdutosController implements Initializable {
                     }
             );
             System.out.println(list);
-            Product p =  new Product(nome.getText(), Double.valueOf(preco.getText()), Integer.valueOf(quantidade.getText()),description.getText(), null);
-            c.conect();
             Category cb = comboBox.getSelectionModel().getSelectedItem();
-            c.query("insert into produtos (name_categoria, name, price, qtd, description) values ('"+cb+"', " +
+            Product p =  new Product(nome.getText(), Double.valueOf(preco.getText()), Integer.valueOf(quantidade.getText()),description.getText(), String.valueOf(cb));
+            c.conect();
+            c.query("insert into produtos (name_categoria, name, price, qtd, description) values ('"+p.getName_categoria()+"', " +
                     "'"+p.getName().toLowerCase()+"', "+p.getPreco()+", "+p.getQtd()+", '"+p.getDescription().toLowerCase()+"')");
             Alerts.showAlert("PRODUTO INSERIDO!", "PRODUTO CADASTRADO COM SUCESSO", null, Alert.AlertType.INFORMATION);
         }catch (Exception e) {
@@ -225,6 +230,40 @@ public  class NewProdutosController implements Initializable {
     public void btnDeletarOnAction() throws Exception {
         deletarProduto();
         name.clear();
+    }
+
+    @FXML
+    public void btnRecarregarCategoriasOnAction () {
+        categoryList.clear();
+        categoryNewList.clear();
+        c.conect();
+        ResultSet rs =  c.query("select * from categoria");
+
+        while (true) {
+
+            try {
+                if (!rs.next()) break;
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                categoryList.add(new Category(rs.getString("name")));
+                categoryNewList.add(new Category(rs.getString("name")));
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        try {
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        categories = FXCollections.observableList(categoryList);
+        comboBox.setItems(categories);
+
+        newCategories = FXCollections.observableList(categoryNewList);
+        comboBoxNovaCategoria.setItems(newCategories);
+        c.disconect();
     }
 
 
