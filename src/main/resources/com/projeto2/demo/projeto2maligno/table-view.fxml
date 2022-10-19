@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.TableViewController">
+<AnchorPane minHeight="550.0" minWidth="830.0" prefHeight="550.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projeto2.demo.projeto2maligno.daos.TableViewController">
    <children>
      <TableView fx:id="table" layoutY="81.0" minWidth="200" prefHeight="320.0" prefWidth="677.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
          <columns>
@@ -18,9 +18,9 @@
             <TableColumn fx:id="categoria" minWidth="0.0" prefWidth="171.0" text="Categoria" />
          </columns>
       </TableView>
-      <Label contentDisplay="CENTER" layoutX="213.0" layoutY="26.0" prefHeight="25.0" prefWidth="252.0" text="VISUALIZAÇÃO DA TABELA DE PRODUTOS" textAlignment="CENTER">
+      <Label contentDisplay="CENTER" layoutX="272.0" layoutY="35.0" prefHeight="25.0" prefWidth="280.0" text="VISUALIZAÇÃO DA TABELA DE PRODUTOS" textAlignment="CENTER" AnchorPane.leftAnchor="272.0" AnchorPane.rightAnchor="278.0">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="Arial Bold" size="13.0" />
          </font>
       </Label>
       <Button fx:id="btnVoltar" layoutX="604.0" layoutY="48.0" mnemonicParsing="false" onAction="#btnActionBack" prefHeight="25.0" prefWidth="59.0" text="Voltar" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="48.0" />

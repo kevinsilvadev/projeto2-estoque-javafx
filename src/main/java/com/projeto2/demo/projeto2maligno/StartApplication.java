@@ -21,20 +21,21 @@ public class StartApplication extends Application {
         StartApplication.stage = stage;
 
         Parent parentTelaHome = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home-view.fxml")));
-        telaHome = new Scene(parentTelaHome, 640,400);
+        telaHome = new Scene(parentTelaHome, 830,550);
 
         Parent parentCadastrarProdutos = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("new-product-view.fxml")));
-        telaCadastrarProdutos = new Scene(parentCadastrarProdutos, 640,400);
+        telaCadastrarProdutos = new Scene(parentCadastrarProdutos, 830,550);
 
         Parent parentNewCategory = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("new-category-view.fxml")));
-        telaNewCategory = new Scene(parentNewCategory, 640,400);
+        telaNewCategory = new Scene(parentNewCategory, 830,550);
 
         Parent parentTableView = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("table-view.fxml")));
-        telaTableView = new Scene(parentTableView, 640,400);
+        telaTableView = new Scene(parentTableView, 830,550);
 
         Parent parentListCategoria = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("listar-categoria-view.fxml")));
-        telaListarCategoria = new Scene(parentListCategoria, 640,400);
+        telaListarCategoria = new Scene(parentListCategoria, 830,550);
 
+        stage.resizableProperty().setValue(false);
         stage.setScene(telaHome);
         stage.show();
     }
