@@ -100,6 +100,11 @@ public  class NewProdutosController implements Initializable {
     }
     private void cadastroDeProduto () {
         try {
+
+            if (nome.getText().equals("") || preco.getText().equals("") || quantidade.getText().equals("") || description.getText().equals("") || String.valueOf(comboBox.getSelectionModel().getSelectedItem()).equals("")) {
+                Alerts.showAlert("ERRO", "DIGITE CORRETAMENTE NOS CAMPOS E SELECIONE UMA CATEGORIA", null, Alert.AlertType.ERROR);
+            }
+
             findProduct();
             list.stream().forEach(
                     x -> {

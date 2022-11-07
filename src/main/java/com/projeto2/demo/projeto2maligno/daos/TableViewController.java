@@ -66,7 +66,7 @@ public  class TableViewController implements Initializable {
 
     private void  findProduct() throws Exception {
         c.conect();
-        ResultSet rs =  c.query("select * from produtos");
+        ResultSet rs = c.query("select * from produtos");
         list.clear();
         while (rs.next()) {
             list.addAll(new Product(rs.getString("name"),rs.getDouble("price"), rs.getInt("qtd"), rs.getString("description"),rs.getString("name_categoria")));
